@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temperature Converter</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="card" role="main" aria-labelledby="title">
+
+    <header>
+      <div class="logo">TC</div>
+      <div>
+        <h1 id="title">Temperature Converter</h1>
+        <p class="sub">Quickly convert between Celsius, Fahrenheit & Kelvin</p>
+      </div>
+    </header>
+
+    <section class="grid">
+
+      <div class="control">
+        <label for="value">Enter Temperature</label>
+        <input id="value" type="number" step="any" placeholder="Enter value">
+
+        <div class="row" style="margin-top:12px">
+          <div style="flex:1">
+            <label for="from">From Unit</label>
+            <select id="from">
+              <option value="c">Celsius (°C)</option>
+              <option value="f">Fahrenheit (°F)</option>
+              <option value="k">Kelvin (K)</option>
+            </select>
+          </div>
+
+          <button id="swap" class="ghost">⇄</button>
+
+          <div style="flex:1">
+            <label for="to">To Unit</label>
+            <select id="to">
+              <option value="f">Fahrenheit (°F)</option>
+              <option value="c">Celsius (°C)</option>
+              <option value="k">Kelvin (K)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="convert">Convert</button>
+          <button id="clear" class="ghost">Reset</button>
+          <button id="download" class="ghost">Save</button>
+        </div>
+
+        <div id="message"></div>
+      </div>
+
+      <div class="control">
+        <label>Converted Result</label>
+
+        <div class="result">
+          <div class="big" id="resultText">—</div>
+          <div class="meta" id="meta">Waiting for input</div>
+
+          <div class="row" style="margin-top:10px">
+            <button id="copy" class="ghost">Copy</button>
+            <button id="round2" class="ghost">2 Decimals</button>
+            <button id="round0" class="ghost">No Decimals</button>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <label>Conversion History</label>
+          <div class="history" id="history"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      <p>Temperature conversions follow scientific standards.</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
